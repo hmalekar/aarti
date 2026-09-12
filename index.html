@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="mr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#8b1e18">
+  <meta name="description" content="गणेश चतुर्थीच्या आरत्यांचा क्रमवार संग्रह">
+  <title>आरती संग्रह</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#/" aria-label="आरती संग्रह — मुख्य पृष्ठ">
+      <span class="brand-mark" aria-hidden="true">ॐ</span>
+      <span><strong>आरती संग्रह</strong><small>गणेश चतुर्थी</small></span>
+    </a>
+    <div class="header-tools">
+      <span class="credit" id="creditText">संकलन · Hardik Malekar</span>
+      <div class="language-switch" id="languageSwitch" role="group" aria-label="लिपी निवडा">
+        <button class="language-option active" data-language="mr" type="button" aria-pressed="true">मराठी</button>
+        <button class="language-option" data-language="en" type="button" aria-pressed="false">English</button>
+      </div>
+      <button class="icon-button" id="aboutButton" type="button" aria-label="या संग्रहाविषयी">?</button>
+    </div>
+  </header>
+
+  <main id="app">
+    <section class="home" id="homeView">
+      <div class="intro">
+        <p class="eyebrow" id="introEyebrow">पारंपरिक आरती · मूळ छापील प्रतीवरून</p>
+        <h1 id="introTitle">आरतीचा क्रम निवडा</h1>
+        <p id="introCopy">दुपार किंवा संध्याकाळची वेळ निवडा आणि क्रमाने आरती म्हणा.</p>
+      </div>
+
+      <div class="controls" aria-label="आरती शोध आणि वेळ">
+        <div class="time-tabs" role="tablist" aria-label="आरतीची वेळ">
+          <button class="time-tab active" id="allTab" data-time="all" role="tab" aria-selected="true">सर्व</button>
+          <button class="time-tab" id="afternoonTab" data-time="A" role="tab" aria-selected="false">दुपार</button>
+          <button class="time-tab" id="eveningTab" data-time="E" role="tab" aria-selected="false">संध्याकाळ</button>
+        </div>
+        <label class="search">
+          <span class="sr-only" id="searchLabel">आरती शोधा</span>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.3-4.3m2.3-5.2a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg>
+          <input id="searchInput" type="search" placeholder="नाव किंवा आरती क्रमांक शोधा…" autocomplete="off">
+        </label>
+      </div>
+
+      <p class="result-count" id="resultCount" aria-live="polite"></p>
+      <div class="aarti-grid" id="aartiGrid"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <p id="emptyCopy">या शोधासाठी आरती सापडली नाही.</p>
+        <button type="button" id="clearSearch">शोध मिटवा</button>
+      </div>
+    </section>
+
+    <article class="reader" id="readerView" hidden>
+      <nav class="reader-nav" aria-label="आरती वाचन">
+        <a class="back-link" id="backLink" href="#/">← सर्व आरत्या</a>
+        <div class="reader-actions">
+          <button class="text-button" id="scanToggle" type="button" aria-pressed="false">मूळ प्रत पहा</button>
+          <button class="text-button" id="printButton" type="button">छापा</button>
+        </div>
+      </nav>
+      <div class="reader-layout">
+        <section class="transcription-panel">
+          <div class="reader-heading">
+            <span class="sequence-badge" id="readerSequence"></span>
+            <div>
+              <p class="reader-meta" id="readerMeta"></p>
+              <h1 id="readerTitle"></h1>
+              <p class="roman-title" id="readerRomanTitle"></p>
+            </div>
+          </div>
+          <div class="transcription" id="transcription"></div>
+        </section>
+        <aside class="scan-panel" id="scanPanel" aria-label="मूळ छापील प्रत">
+          <div class="scan-heading"><strong id="scanHeading">मूळ छापील प्रत</strong><span id="scanNote">तपासणीसाठी</span></div>
+          <img id="scanImage" alt="">
+        </aside>
+      </div>
+      <div class="reader-pager">
+        <a id="previousAarti" href="#/"></a>
+        <a id="nextAarti" href="#/"></a>
+      </div>
+    </article>
+  </main>
+
+  <dialog id="aboutDialog">
+    <button class="dialog-close" id="closeAbout" type="button" aria-label="बंद करा">×</button>
+    <p class="eyebrow" id="aboutEyebrow">या संग्रहाविषयी</p>
+    <h2 id="aboutTitle">छापील परंपरा, सहज वाचन</h2>
+    <p id="aboutCopyOne">हा संग्रह जुन्या <em>आरती-सागर</em>मधील स्कॅनवरून तयार केला आहे. मूळ शब्दरचना आणि कडव्यांचा क्रम जपला आहे.</p>
+    <p id="aboutCopyTwo">प्रत्येक आरतीसोबत तिची मूळ प्रत दिली आहे. अस्पष्ट वाचन पडताळल्यानंतरच अंतिम मजकूर प्रसिद्ध केला जाईल.</p>
+    <p class="dialog-credit" id="aboutCredit">संकलन आणि प्रस्तुती · Hardik Malekar</p>
+  </dialog>
+
+  <script src="aartis-data.js?v=1"></script>
+  <script src="app.js?v=4"></script>
+</body>
+</html>
