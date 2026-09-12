@@ -55,18 +55,18 @@ const copy = {
   mr: {
     eyebrow: "पारंपरिक आरती · मूळ छापील प्रतीवरून", title: "आरतीचा क्रम निवडा", intro: "दुपार किंवा संध्याकाळची वेळ निवडा आणि क्रमाने आरती म्हणा.",
     all: "सर्व", afternoon: "दुपार", evening: "संध्याकाळ", search: "नाव किंवा आरती क्रमांक शोधा…", count: "आरत्या",
-    empty: "या शोधासाठी आरती सापडली नाही.", clear: "शोध मिटवा", credit: "संकलन · Hardik Malekar",
+    empty: "या शोधासाठी आरती सापडली नाही.", clear: "शोध मिटवा", credit: "संकलन · Hardik Malekar · परीक्षण · Rohit Malekar",
     back: "← सर्व आरत्या", scanShow: "मूळ प्रत पहा", scanHide: "मूळ प्रत लपवा", print: "छापा", scan: "मूळ छापील प्रत", scanNote: "तपासणीसाठी",
     read: "वाचा →", pending: "प्रतिलेखन पडताळणीमध्ये", pendingTitle: "प्रतिलेखनाची पडताळणी सुरू आहे", pendingCopy: "तोपर्यंत मूळ छापील प्रत पाहता येईल.", aartiNo: "आरती क्र.",
-    aboutEyebrow: "या संग्रहाविषयी", aboutTitle: "छापील परंपरा, सहज वाचन", aboutOne: "हा संग्रह जुन्या आरती-सागरमधील स्कॅनवरून तयार केला आहे. मूळ शब्दरचना आणि कडव्यांचा क्रम जपला आहे.", aboutTwo: "प्रत्येक आरतीसोबत तिची मूळ प्रत दिली आहे. प्रतीत अस्पष्ट असलेले शब्द पिवळ्या रंगात दाखवले आहेत, जेणेकरून जाणकार त्यांची पडताळणी करू शकतील.", aboutCredit: "संकलन आणि प्रस्तुती · Hardik Malekar", languageLabel: "लिपी निवडा", searchLabel: "आरती शोधा", aboutLabel: "या संग्रहाविषयी", scanLabel: "मूळ छापील प्रत", siteTitle: "आरती संग्रह"
+    aboutEyebrow: "या संग्रहाविषयी", aboutTitle: "छापील परंपरा, सहज वाचन", aboutOne: "हा संग्रह जुन्या आरती-सागरमधील स्कॅनवरून तयार केला आहे. मूळ शब्दरचना आणि कडव्यांचा क्रम जपला आहे.", aboutTwo: "प्रत्येक आरतीसोबत तिची मूळ प्रत दिली आहे. प्रतीत अस्पष्ट असलेले शब्द पिवळ्या रंगात दाखवले आहेत, जेणेकरून जाणकार त्यांची पडताळणी करू शकतील.", aboutCredit: "संकलन आणि प्रस्तुती · Hardik Malekar · परीक्षण · Rohit Malekar", languageLabel: "लिपी निवडा", searchLabel: "आरती शोधा", aboutLabel: "या संग्रहाविषयी", scanLabel: "मूळ छापील प्रत", siteTitle: "आरती संग्रह"
   },
   en: {
     eyebrow: "Traditional aartis · From the original printed pages", title: "Choose the recitation order", intro: "Select afternoon or evening, then follow the aartis in order.",
     all: "All", afternoon: "Afternoon", evening: "Evening", search: "Search by name or aarti number…", count: "aartis",
-    empty: "No aarti matches this search.", clear: "Clear search", credit: "Curated by Hardik Malekar",
+    empty: "No aarti matches this search.", clear: "Clear search", credit: "Curated by Hardik Malekar · Reviewed by Rohit Malekar",
     back: "← All aartis", scanShow: "View original", scanHide: "Hide original", print: "Print", scan: "Original printed page", scanNote: "For reference",
     read: "Read →", pending: "Transcription under review", pendingTitle: "Transcription is being verified", pendingCopy: "The original printed page is available in the meantime.", aartiNo: "Aarti no.",
-    aboutEyebrow: "About this collection", aboutTitle: "Printed tradition, easier reading", aboutOne: "This collection is prepared from scans of the old Aarti-Sagar. The original wording and verse order are preserved.", aboutTwo: "Every aarti includes its original printed page. Words that remain unclear in the scan are highlighted in yellow so a knowledgeable reader can check them.", aboutCredit: "Curated and presented by Hardik Malekar", languageLabel: "Choose script", searchLabel: "Search aartis", aboutLabel: "About this collection", scanLabel: "Original printed page", siteTitle: "Aarti Collection"
+    aboutEyebrow: "About this collection", aboutTitle: "Printed tradition, easier reading", aboutOne: "This collection is prepared from scans of the old Aarti-Sagar. The original wording and verse order are preserved.", aboutTwo: "Every aarti includes its original printed page. Words that remain unclear in the scan are highlighted in yellow so a knowledgeable reader can check them.", aboutCredit: "Curated and presented by Hardik Malekar · Reviewed by Rohit Malekar", languageLabel: "Choose script", searchLabel: "Search aartis", aboutLabel: "About this collection", scanLabel: "Original printed page", siteTitle: "Aarti Collection"
   }
 };
 
