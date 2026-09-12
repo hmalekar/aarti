@@ -143,6 +143,9 @@ function renderReader(sequence) {
   $("scanImage").src = aarti.scan;
   $("scanImage").alt = state.language === "mr" ? `आरती क्रमांक ${devanagari(aarti.number)} ची मूळ छापील प्रत` : `Original printed page for aarti number ${aarti.number}`;
   const source = transcriptions[aarti.sequence];
+  const printedLines = source.reduce((total, [, text]) => total + text.split("\n").length, 0);
+  $("readerView").dataset.printLayout = printedLines > 20 ? "columns" : "single";
+  $("readerView").dataset.printDensity = printedLines > 35 ? "dense" : "regular";
   const verses = state.language === "mr"
     ? source
     : (aarti.sequence === 13 ? aarti234Roman : source.map(([label, text]) => [romanLabel(label), romanize(text)]));

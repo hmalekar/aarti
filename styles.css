@@ -148,9 +148,30 @@ dialog p { line-height: 1.75; }
   .language-option { padding: 6px 9px; }
 }
 @media print {
-  body { background: white; }
+  @page { size: A4 portrait; margin: 10mm; }
+  html, body { background: white; }
+  body { color: #1f1512; }
   .site-header, .reader-nav, .scan-panel, .reader-pager { display: none !important; }
-  main, .reader { padding: 0; max-width: none; }
+  main, .reader { width: auto; max-width: none; margin: 0; padding: 0; }
   .reader-layout { display: block; padding: 0; }
   .transcription-panel { border: 0; box-shadow: none; padding: 0; }
+  .reader-heading { gap: 10mm; padding: 0 0 4mm; border-bottom-width: 1.5pt; }
+  .sequence-badge { width: 12mm; height: 12mm; font-size: 15pt; }
+  .reader-meta { margin-bottom: 1mm; font-size: 9pt; }
+  .reader h1 { font-size: 22pt; line-height: 1.12; }
+  .roman-title { margin-top: 1mm; font-size: 10pt; }
+  .transcription { padding-top: 5mm; font-size: 15pt; line-height: 1.45; }
+  .verse { margin: 0 0 3.2mm; break-inside: avoid; page-break-inside: avoid; }
+  .verse-label { margin-bottom: .5mm; font-size: 9pt; }
+  .uncertain-note { margin: 0 0 4mm; padding: 2mm 3mm; font-size: 9pt; column-span: all; }
+  .reader[data-print-layout="columns"] .transcription {
+    column-count: 2;
+    column-gap: 10mm;
+    column-rule: .5pt solid #d8c7b2;
+    font-size: 14pt;
+    line-height: 1.4;
+  }
+  .reader[data-print-layout="columns"] .verse { margin-bottom: 2.6mm; }
+  .reader[data-print-density="dense"] .transcription { font-size: 12.5pt; line-height: 1.35; }
+  .reader[data-print-density="dense"] .verse { margin-bottom: 2mm; }
 }
