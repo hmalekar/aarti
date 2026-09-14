@@ -17,7 +17,7 @@ const aartis = [
   [16,100,"E","आरती अनंतभुजा विठो पंढरीराजा","Aarati Ananatabhuja Vitho Pandhari Raja"],
   [17,65,"E","जय जय त्र्यंबकराज गिरिजानाथा गंगाधरा हो","Jai Jai Trembak Raj Giraja Natha Ganga Dhara Ho"],
   [18,122,"E","आश्विन शुद्धपक्षीं अंबा बैसली सिंहासनी हो","Ashwin Shudha Pakshi Aamba Baisali"],
-  [19,27,"A_E","जय सिताबा देवी आई जय सिताबा देवी","Jai Sitaba Devi Aai"],
+  [19,27,"A_E","जय सितबादेवी आई जय सितबादेवी","Jai Sitabadevi Aai"],
   [20,429,"A_E","जाहले भजन आम्ही नमितो तव चरणा","Jahale Bhajana Aamhi Namito Tava Charna"],
   [21,432,"A_E","रामा रामा रामा रामा रघुनंदना","Rama Rama Rama Rama Raghunandana"],
   [22,434,"A_E","घालीन लोटांगण वंदीन चरण","Ghaleen Lotangan Vandin Charan"],
