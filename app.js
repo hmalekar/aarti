@@ -116,6 +116,10 @@ const state = { time: "all", query: "", language: localStorage.getItem("aarti-la
 const $ = id => document.getElementById(id);
 if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
+function readingSequence() {
+  return state.time === "all" ? aartis : aartis.filter(aarti => aarti.timing.includes(state.time));
+}
+
 function card(aarti) {
   const c = copy[state.language];
   const tags = aarti.timing.split("_").map(t => `<span>${t === "A" ? c.afternoon : c.evening}</span>`).join("");
@@ -175,8 +179,12 @@ function renderReader(sequence) {
     : (aarti.sequence === 13 ? aarti234Roman : source.map(([label, text]) => [romanLabel(label), romanize(text)]));
   const hasUncertainReading = source.some(([, text]) => text.includes("[["));
   $("transcription").innerHTML = `${hasUncertainReading ? `<p class="uncertain-note">${state.language === "mr" ? "पिवळ्या रंगातील शब्द मूळ प्रतीत अस्पष्ट आहेत आणि तपासण्याची गरज आहे." : "Words highlighted in yellow are unclear in the scan and need checking."}</p>` : ""}${verses.map(([label,text]) => `<section class="verse"><span class="verse-label">${formatReading(String(label))}</span>${formatReading(text)}</section>`).join("")}`;
-  const prev = aartis[aarti.sequence - 2];
-  const next = aartis[aarti.sequence] || (aarti.sequence === aartis.length ? closingPrayer : null);
+  const filteredAartis = readingSequence();
+  const filteredIndex = filteredAartis.findIndex(item => item.sequence === aarti.sequence);
+  const pagerAartis = filteredIndex === -1 ? aartis : filteredAartis;
+  const pagerIndex = filteredIndex === -1 ? aartis.findIndex(item => item.sequence === aarti.sequence) : filteredIndex;
+  const prev = pagerAartis[pagerIndex - 1];
+  const next = pagerAartis[pagerIndex + 1] || (pagerIndex === pagerAartis.length - 1 ? closingPrayer : null);
   $("previousAarti").hidden = !prev; $("nextAarti").hidden = !next;
   if (prev) { $("previousAarti").href = `#/aarti/${prev.sequence}`; $("previousAarti").textContent = `← ${state.language === "mr" ? devanagari(prev.sequence) : prev.sequence}. ${state.language === "mr" ? prev.title : prev.roman}`; }
   if (next?.id === "closing") { $("nextAarti").href = "#/closing"; $("nextAarti").textContent = `${c.closingTitle} →`; }
@@ -201,7 +209,8 @@ function renderClosing() {
   $("readerRomanTitle").textContent = secondaryTitle;
   $("scanPanel").hidden = true; $("scanToggle").hidden = true;
   $("transcription").innerHTML = verses.map(([label, text]) => `<section class="verse"><span class="verse-label">${formatReading(String(label))}</span>${formatReading(text)}</section>`).join("");
-  const previous = aartis[aartis.length - 1];
+  const filteredAartis = readingSequence();
+  const previous = filteredAartis[filteredAartis.length - 1] || aartis[aartis.length - 1];
   $("previousAarti").hidden = false;
   $("previousAarti").href = `#/aarti/${previous.sequence}`;
   $("previousAarti").textContent = `← ${state.language === "mr" ? devanagari(previous.sequence) : previous.sequence}. ${state.language === "mr" ? previous.title : previous.roman}`;
