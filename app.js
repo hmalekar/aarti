@@ -29,6 +29,14 @@ const aartis = [
   verified: Boolean(transcriptions[sequence])
 }));
 
+const closingPrayer = {
+  id: "closing",
+  title: "समारोप श्लोक",
+  roman: "Closing Shlok",
+  timing: "A_E",
+  verified: true
+};
+
 const aarti234 = [
   ["ध्रुवपद", "आरती सप्रेम जय जय विठ्ठल परब्रह्म ॥\nभक्तसंकटीं नाना स्वरूपीं स्थापिसि स्वधर्म ॥ धृ० ॥"],
   ["१", "अंबऋषींकारणें गर्भवास सोशीसी ॥\nवेद नेले चोरूनि ब्रह्मा आणुनिया देसी ॥\nमत्स्यरूपीं नारायण सप्तहि सागर धुंडिसी ॥\nहस्त लागतां शंखासुरा तुझा वर देसी ॥ १ ॥"],
@@ -44,11 +52,11 @@ const aarti234Roman = [
   ["Refrain", "Aarati saprem jai jai Vitthal parabrahma ॥\nBhaktasankatin nana svarupin sthapisi svadharma ॥ Dhru. ॥"],
   ["1", "Ambarushinkarane garbhavaas soshisi ॥\nVeda nele choruni Brahma aanuniya desi ॥\nMatsyarupin Narayan saptahi sagar dhundisi ॥\nHasta lagatan Shankhasura tujha vara desi ॥ 1 ॥"],
   ["2", "Rasatalasi jatan pruthvi pathivar ghesi ॥\nParopakarasathi deva kansava jhalasi ॥\nDadhen dharuni pruthvi neta Varaharupa hosi ॥\nPralhadakarane stambhin Narahari gurgursi ॥ 2 ॥"],
-  ["3", "Panchave avatari Balichya dvarala jasi ॥\nBhikshe sthala maguni Balila patalin nesi ॥\nSarva samarpana kele mhanauni prasanna tya hosi ॥\nVamanarupa dharuni Balichya dvarin tishthasi ॥ 3 ॥"],
+  ["3", "Panchave avatari Balichya dvarala jasi ॥\nBhikshe sthala maguni Balila patalin nesi ॥\nSarva samarpana kele mhunoni prasanna tya hosi ॥\nVamanarupa dharuni Balichya dvarin tishthasi ॥ 3 ॥"],
   ["4", "Sahasrarjuna matala Jamadagnicha vadha kela ॥\nKashti te Renuka mhanauni Sahasrarjuna vadhila ॥\nNihkshatri pruthvi dana didhali viprala ॥\nSahava avatara Parashurama pragatala ॥ 4 ॥"],
-  ["5", "Matala Ravana sarvan upadrava kela ॥\nTehatis koti deva bandin harale Sitela ॥\nPitruvachanalagin Ramen vanavasa kela ॥\nMiloni vanara sahita Rajarama pragatala ॥ 5 ॥"],
+  ["5", "Matala Ravana sarvan upadrava kela ॥\nTehatis koti deva bandin harale Sitela ॥\nPitruvachanalagin Ramen vanavasa kela ॥\nMilavuni vanara sena Rajarama pragatala ॥ 5 ॥"],
   ["6", "Devaki-Vasudeva bandimochana tvan kele ॥\nNandagharin jauna nijasukha Gokula didhale ॥\nGorasachori karitan navalaksha Gopala milavile ॥\nGopikanche prema dekhuni Shrikrishna bhulale ॥ 6 ॥"],
-  ["7", "Bauddha Kalanki Kaliyugi jhala adharma ha avagha ॥\nSanduni nityadharma soduni Nandachi seva ॥\nMlenchchhamardana karisi mhanauni Kalanki Keshava ॥\nBahiravi Janhavi ghavi nijasukhanandaseva ॥ 7 ॥"]
+  ["7", "Bauddha Kalanki Kaliyugi jhala adharma ha avagha ॥\nSanduna dighala dharma soduni Nandachi seva ॥\nMlenchchhamardana karisi mhanauni Kalanki Keshava ॥\nBahiravi Janhavi dyavi nijasukhanandaseva ॥ 7 ॥"]
 ];
 
 const copy = {
@@ -58,7 +66,7 @@ const copy = {
     empty: "या शोधासाठी आरती सापडली नाही.", clear: "शोध मिटवा", credit: "संकलन · Hardik Malekar · परीक्षण · Rohit Malekar",
     back: "← सर्व आरत्या", scanShow: "मूळ प्रत पहा", scanHide: "मूळ प्रत लपवा", print: "छापा", scan: "मूळ छापील प्रत", scanNote: "तपासणीसाठी",
     read: "वाचा →", pending: "प्रतिलेखन पडताळणीमध्ये", pendingTitle: "प्रतिलेखनाची पडताळणी सुरू आहे", pendingCopy: "तोपर्यंत मूळ छापील प्रत पाहता येईल.", aartiNo: "आरती क्र.",
-    aboutEyebrow: "या संग्रहाविषयी", aboutTitle: "छापील परंपरा, सहज वाचन", aboutOne: "हा संग्रह जुन्या आरती-सागरमधील स्कॅनवरून तयार केला आहे. मूळ शब्दरचना आणि कडव्यांचा क्रम जपला आहे.", aboutTwo: "प्रत्येक आरतीसोबत तिची मूळ प्रत दिली आहे. प्रतीत अस्पष्ट असलेले शब्द पिवळ्या रंगात दाखवले आहेत, जेणेकरून जाणकार त्यांची पडताळणी करू शकतील.", aboutCredit: "संकलन आणि प्रस्तुती · Hardik Malekar · परीक्षण · Rohit Malekar", languageLabel: "लिपी निवडा", searchLabel: "आरती शोधा", aboutLabel: "या संग्रहाविषयी", scanLabel: "मूळ छापील प्रत", siteTitle: "आरती संग्रह"
+    aboutEyebrow: "या संग्रहाविषयी", aboutTitle: "छापील परंपरा, सहज वाचन", aboutOne: "हा संग्रह जुन्या आरती-सागरमधील स्कॅनवरून तयार केला आहे. मूळ शब्दरचना आणि कडव्यांचा क्रम जपला आहे.", aboutTwo: "प्रत्येक आरतीसोबत तिची मूळ प्रत दिली आहे. प्रतीत अस्पष्ट असलेले शब्द पिवळ्या रंगात दाखवले आहेत, जेणेकरून जाणकार त्यांची पडताळणी करू शकतील.", aboutCredit: "संकलन आणि प्रस्तुती · Hardik Malekar · परीक्षण · Rohit Malekar", languageLabel: "लिपी निवडा", searchLabel: "आरती शोधा", aboutLabel: "या संग्रहाविषयी", scanLabel: "मूळ छापील प्रत", siteTitle: "आरती संग्रह", closing: "समारोप", afterAll: "सर्व आरत्यांनंतर", closingTitle: "समारोप श्लोक"
   },
   en: {
     eyebrow: "Traditional aartis · From the original printed pages", title: "Choose the recitation order", intro: "Select afternoon or evening, then follow the aartis in order.",
@@ -66,7 +74,7 @@ const copy = {
     empty: "No aarti matches this search.", clear: "Clear search", credit: "Curated by Hardik Malekar · Reviewed by Rohit Malekar",
     back: "← All aartis", scanShow: "View original", scanHide: "Hide original", print: "Print", scan: "Original printed page", scanNote: "For reference",
     read: "Read →", pending: "Transcription under review", pendingTitle: "Transcription is being verified", pendingCopy: "The original printed page is available in the meantime.", aartiNo: "Aarti no.",
-    aboutEyebrow: "About this collection", aboutTitle: "Printed tradition, easier reading", aboutOne: "This collection is prepared from scans of the old Aarti-Sagar. The original wording and verse order are preserved.", aboutTwo: "Every aarti includes its original printed page. Words that remain unclear in the scan are highlighted in yellow so a knowledgeable reader can check them.", aboutCredit: "Curated and presented by Hardik Malekar · Reviewed by Rohit Malekar", languageLabel: "Choose script", searchLabel: "Search aartis", aboutLabel: "About this collection", scanLabel: "Original printed page", siteTitle: "Aarti Collection"
+    aboutEyebrow: "About this collection", aboutTitle: "Printed tradition, easier reading", aboutOne: "This collection is prepared from scans of the old Aarti-Sagar. The original wording and verse order are preserved.", aboutTwo: "Every aarti includes its original printed page. Words that remain unclear in the scan are highlighted in yellow so a knowledgeable reader can check them.", aboutCredit: "Curated and presented by Hardik Malekar · Reviewed by Rohit Malekar", languageLabel: "Choose script", searchLabel: "Search aartis", aboutLabel: "About this collection", scanLabel: "Original printed page", siteTitle: "Aarti Collection", closing: "Closing", afterAll: "After all aartis", closingTitle: "Closing Shlok"
   }
 };
 
@@ -120,12 +128,26 @@ function card(aarti) {
   </a>`;
 }
 
+function closingCard() {
+  const c = copy[state.language];
+  const primaryTitle = state.language === "mr" ? closingPrayer.title : closingPrayer.roman;
+  const secondaryTitle = state.language === "mr" ? closingPrayer.roman : closingPrayer.title;
+  return `<a class="aarti-card closing-card" href="#/closing" aria-label="${primaryTitle}">
+    <div class="card-top"><span class="sequence">${c.closing}</span><span class="timing"><span>${c.afterAll}</span></span></div>
+    <h2>${primaryTitle}</h2><p class="roman">${secondaryTitle}</p>
+    <span class="status">${c.read}</span>
+  </a>`;
+}
+
 function renderList() {
   const q = state.query.trim().toLocaleLowerCase("mr");
   const list = aartis.filter(a => (state.time === "all" || a.timing.includes(state.time)) && (!q || `${a.title} ${a.roman} ${a.number} ${a.sequence}`.toLocaleLowerCase("mr").includes(q)));
-  $("aartiGrid").innerHTML = list.map(card).join("");
-  $("resultCount").textContent = `${state.language === "mr" ? devanagari(list.length) : list.length} ${copy[state.language].count}`;
-  $("emptyState").hidden = list.length !== 0;
+  const closingSearch = `${closingPrayer.title} ${closingPrayer.roman} ${transcriptions.closing.map(([, text]) => text).join(" ")}`.toLocaleLowerCase("mr");
+  const showClosing = (state.time === "all" || closingPrayer.timing.includes(state.time)) && (!q || closingSearch.includes(q));
+  $("aartiGrid").innerHTML = `${list.map(card).join("")}${showClosing ? closingCard() : ""}`;
+  const aartiCount = `${state.language === "mr" ? devanagari(list.length) : list.length} ${copy[state.language].count}`;
+  $("resultCount").textContent = showClosing ? `${aartiCount} · ${copy[state.language].closingTitle}` : aartiCount;
+  $("emptyState").hidden = list.length !== 0 || showClosing;
 }
 
 function renderReader(sequence) {
@@ -136,6 +158,8 @@ function renderReader(sequence) {
   const secondaryTitle = state.language === "mr" ? aarti.roman : aarti.title;
   document.title = `${primaryTitle} · ${c.siteTitle}`;
   $("homeView").hidden = true; $("readerView").hidden = false;
+  $("readerView").classList.remove("closing-reading");
+  $("scanPanel").hidden = false; $("scanToggle").hidden = false;
   $("readerSequence").textContent = state.language === "mr" ? devanagari(aarti.sequence) : aarti.sequence;
   $("readerMeta").textContent = `${c.aartiNo} ${state.language === "mr" ? devanagari(aarti.number) : aarti.number} · ${timingText(aarti.timing)}`;
   $("readerTitle").textContent = primaryTitle;
@@ -151,10 +175,37 @@ function renderReader(sequence) {
     : (aarti.sequence === 13 ? aarti234Roman : source.map(([label, text]) => [romanLabel(label), romanize(text)]));
   const hasUncertainReading = source.some(([, text]) => text.includes("[["));
   $("transcription").innerHTML = `${hasUncertainReading ? `<p class="uncertain-note">${state.language === "mr" ? "पिवळ्या रंगातील शब्द मूळ प्रतीत अस्पष्ट आहेत आणि तपासण्याची गरज आहे." : "Words highlighted in yellow are unclear in the scan and need checking."}</p>` : ""}${verses.map(([label,text]) => `<section class="verse"><span class="verse-label">${formatReading(String(label))}</span>${formatReading(text)}</section>`).join("")}`;
-  const prev = aartis[aarti.sequence - 2], next = aartis[aarti.sequence];
+  const prev = aartis[aarti.sequence - 2];
+  const next = aartis[aarti.sequence] || (aarti.sequence === aartis.length ? closingPrayer : null);
   $("previousAarti").hidden = !prev; $("nextAarti").hidden = !next;
   if (prev) { $("previousAarti").href = `#/aarti/${prev.sequence}`; $("previousAarti").textContent = `← ${state.language === "mr" ? devanagari(prev.sequence) : prev.sequence}. ${state.language === "mr" ? prev.title : prev.roman}`; }
-  if (next) { $("nextAarti").href = `#/aarti/${next.sequence}`; $("nextAarti").textContent = `${state.language === "mr" ? devanagari(next.sequence) : next.sequence}. ${state.language === "mr" ? next.title : next.roman} →`; }
+  if (next?.id === "closing") { $("nextAarti").href = "#/closing"; $("nextAarti").textContent = `${c.closingTitle} →`; }
+  else if (next) { $("nextAarti").href = `#/aarti/${next.sequence}`; $("nextAarti").textContent = `${state.language === "mr" ? devanagari(next.sequence) : next.sequence}. ${state.language === "mr" ? next.title : next.roman} →`; }
+  setTimeout(() => window.scrollTo(0, 0), 0);
+}
+
+function renderClosing() {
+  const c = copy[state.language];
+  const primaryTitle = state.language === "mr" ? closingPrayer.title : closingPrayer.roman;
+  const secondaryTitle = state.language === "mr" ? closingPrayer.roman : closingPrayer.title;
+  const source = transcriptions.closing;
+  const verses = state.language === "mr" ? source : source.map(([label, text]) => [c.closing, romanize(text)]);
+  document.title = `${primaryTitle} · ${c.siteTitle}`;
+  $("homeView").hidden = true; $("readerView").hidden = false;
+  $("readerView").classList.add("closing-reading");
+  $("readerView").dataset.printLayout = "single";
+  $("readerView").dataset.printDensity = "regular";
+  $("readerSequence").textContent = "ॐ";
+  $("readerMeta").textContent = `${c.closing} · ${c.afterAll}`;
+  $("readerTitle").textContent = primaryTitle;
+  $("readerRomanTitle").textContent = secondaryTitle;
+  $("scanPanel").hidden = true; $("scanToggle").hidden = true;
+  $("transcription").innerHTML = verses.map(([label, text]) => `<section class="verse"><span class="verse-label">${formatReading(String(label))}</span>${formatReading(text)}</section>`).join("");
+  const previous = aartis[aartis.length - 1];
+  $("previousAarti").hidden = false;
+  $("previousAarti").href = `#/aarti/${previous.sequence}`;
+  $("previousAarti").textContent = `← ${state.language === "mr" ? devanagari(previous.sequence) : previous.sequence}. ${state.language === "mr" ? previous.title : previous.roman}`;
+  $("nextAarti").hidden = true;
   setTimeout(() => window.scrollTo(0, 0), 0);
 }
 
@@ -174,6 +225,7 @@ function applyLanguage() {
 function route() {
   const match = location.hash.match(/^#\/aarti\/(\d+)/);
   if (match) renderReader(match[1]);
+  else if (location.hash === "#/closing") renderClosing();
   else { document.title = copy[state.language].siteTitle; $("readerView").hidden = true; $("homeView").hidden = false; renderList(); }
 }
 
